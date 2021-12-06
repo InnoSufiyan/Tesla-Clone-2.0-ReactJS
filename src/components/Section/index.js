@@ -11,17 +11,21 @@ function Section({
 }) {
   return (
     <Wrap bgImage={backgroundImg}>
-      <ItemText>
-        <h1>{title}</h1>
-        <p>{description}</p>
-      </ItemText>
-      <Buttons>
-        <ButtonGroup>
-          <LeftButton>{leftBtnTxt}</LeftButton>
-          {rightBtnTxt && <RightButton>{rightBtnTxt}</RightButton>}
-        </ButtonGroup>
-        <DownArrow src="/images/down-arrow.svg" />
-      </Buttons>
+      <Fade bottom>
+        <ItemText>
+          <h1>{title}</h1>
+          <p>{description}</p>
+        </ItemText>
+      </Fade>
+      <Fade bottom>
+        <Buttons>
+          <ButtonGroup>
+            <LeftButton>{leftBtnTxt}</LeftButton>
+            {rightBtnTxt && <RightButton>{rightBtnTxt}</RightButton>}
+          </ButtonGroup>
+          <DownArrow src="/images/down-arrow.svg" />
+        </Buttons>
+      </Fade>
     </Wrap>
   );
 }
