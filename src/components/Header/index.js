@@ -9,8 +9,8 @@ import { useSelector } from 'react-redux';
 function Header() {
 
 
-    const [burgerStatus, setBurgerStatus] = useState(false);
     const cars = useSelector(selectCars)
+    const [burgerStatus, setBurgerStatus] = useState(false);
 
 
     return (
@@ -19,9 +19,9 @@ function Header() {
                 <img src="/images/logo.svg" />
             </a>
             <Menu>
-                {cars && cars.map((car, index) => {
+                {cars && cars.map((car, index) => (
                     <a key={index} href="#">{car}</a>
-                })}
+                ))}
             </Menu>
             <RightMenu>
                 <a href="#">Shop</a>
@@ -32,24 +32,33 @@ function Header() {
                 <CloseWrapper>
                     <CustomClose onClick={() => setBurgerStatus(false)} />
                 </CloseWrapper>
-                {console.log(cars)}
-                {cars && cars.map(() => {
+                {cars && cars.map((car, index) => (
                     <li>
-                        <a href="#">Used Inventory</a>
+                        <a key={index} href="#">{car}</a>
                     </li>
-                })}
+                ))}
+                <li>
+                    <a href="#">Existing Inventory</a>
+                </li>
                 <li>
                     <a href="#">Used Inventory</a>
                 </li>
                 <li>
-                    <a href="#">Trade-in</a>
+                    <a href="#">Trade In</a>
                 </li>
                 <li>
-                    <a href="#">Cybertruck</a>
+                    <a href="#">Existing Inventory</a>
                 </li>
                 <li>
-                    <a href="#">Roadaster</a>
+                    <a href="#">Test Drive</a>
                 </li>
+                <li>
+                    <a href="#">Cyber Truck</a>
+                </li>
+                <li>
+                    <a href="#">Roadster</a>
+                </li>
+
             </BurgerNav>
         </Container>
     )
