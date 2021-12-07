@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/Tesla-Clone-2.0-ReactJS/static/css/main.7ba9e9a4.chunk.css",
+    "main.js": "/Tesla-Clone-2.0-ReactJS/static/js/main.e8966452.chunk.js",
+    "main.js.map": "/Tesla-Clone-2.0-ReactJS/static/js/main.e8966452.chunk.js.map",
+    "runtime-main.js": "/Tesla-Clone-2.0-ReactJS/static/js/runtime-main.824e60dd.js",
+    "runtime-main.js.map": "/Tesla-Clone-2.0-ReactJS/static/js/runtime-main.824e60dd.js.map",
+    "static/js/2.0b557e9f.chunk.js": "/Tesla-Clone-2.0-ReactJS/static/js/2.0b557e9f.chunk.js",
+    "static/js/2.0b557e9f.chunk.js.map": "/Tesla-Clone-2.0-ReactJS/static/js/2.0b557e9f.chunk.js.map",
+    "index.html": "/Tesla-Clone-2.0-ReactJS/index.html",
+    "static/css/main.7ba9e9a4.chunk.css.map": "/Tesla-Clone-2.0-ReactJS/static/css/main.7ba9e9a4.chunk.css.map",
+    "static/js/2.0b557e9f.chunk.js.LICENSE.txt": "/Tesla-Clone-2.0-ReactJS/static/js/2.0b557e9f.chunk.js.LICENSE.txt",
+    "static/media/logo.db36153e.svg": "/Tesla-Clone-2.0-ReactJS/static/media/logo.db36153e.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.824e60dd.js",
+    "static/js/2.0b557e9f.chunk.js",
+    "static/css/main.7ba9e9a4.chunk.css",
+    "static/js/main.e8966452.chunk.js"
+  ]
+}
