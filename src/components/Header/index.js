@@ -1,54 +1,55 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import MenuIcon from '@material-ui/icons/Menu'
 import CloseIcon from '@material-ui/icons/Close';
 
+import { selectCars } from '../../features/car/carSlice';
+import { useSelector } from 'react-redux';
+
 function Header() {
+
+
+    const [burgerStatus, setBurgerStatus] = useState(false);
+    const cars = useSelector(selectCars)
+
+
     return (
         <Container>
             <a>
                 <img src="/images/logo.svg" />
             </a>
             <Menu>
-                <p><a href="#">Model S</a></p>
-                <p><a href="#">Model 3</a></p>
-                <p><a href="#">Model X</a></p>
-                <p><a href="#">Model Y</a></p>
+                {cars && cars.map((car, index) => {
+                    <a key={index} href="#">{car}</a>
+                })}
             </Menu>
             <RightMenu>
                 <a href="#">Shop</a>
                 <a href="#">Tesla Account</a>
-                <CustomMenu />
+                <CustomMenu onClick={() => setBurgerStatus(true)} />
             </RightMenu>
-            <BurgerNav>
+            <BurgerNav shutter={burgerStatus}>
                 <CloseWrapper>
-                    <CustomClose />
+                    <CustomClose onClick={() => setBurgerStatus(false)} />
                 </CloseWrapper>
+                {console.log(cars)}
+                {cars && cars.map(() => {
+                    <li>
+                        <a href="#">Used Inventory</a>
+                    </li>
+                })}
                 <li>
-                    <a href="#">Existing Inventory</a>
+                    <a href="#">Used Inventory</a>
                 </li>
                 <li>
-                    <a href="#">Existing Inventory</a>
+                    <a href="#">Trade-in</a>
                 </li>
                 <li>
-                    <a href="#">Existing Inventory</a>
+                    <a href="#">Cybertruck</a>
                 </li>
                 <li>
-                    <a href="#">Existing Inventory</a>
+                    <a href="#">Roadaster</a>
                 </li>
-                <li>
-                    <a href="#">Existing Inventory</a>
-                </li>
-                <li>
-                    <a href="#">Existing Inventory</a>
-                </li>
-                <li>
-                    <a href="#">Existing Inventory</a>
-                </li>
-                <li>
-                    <a href="#">Existing Inventory</a>
-                </li>
-
             </BurgerNav>
         </Container>
     )
@@ -114,7 +115,9 @@ const BurgerNav = styled.div`
     padding: 20px;
     display: flex;
     flex-direction: column;
-    align-items: start;
+    text-align: start;
+    transform: ${(props) => props.shutter ? 'translateX(0)' : 'translateX(100%)'};
+    transition: transform 0.2s;
     li {
         width: 100%;
         padding: 15px 0;
